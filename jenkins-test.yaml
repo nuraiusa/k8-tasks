@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels: 
+    name: jenkins-svc  
+  name: jenkins-svc
+spec:
+  replicas: 1
+  selector:
+    app: jenkins-pod
+  template:
+    metadata:
+      labels:
+        app: jenkins-pod
+    spec:
+      containers:
+      - name: jenkins-test
+        image: jenkins/jenkins:latest
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+
+        
+               
+                      
+                               
+                                   
+                                               
+                                                           
+                                                                 
+                                                                                  
+                                                                                               
+                                                                                                            
+                                                                   
+
